@@ -1,95 +1,151 @@
-/* Estilos gerais */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
+  background-color: #ffffff !important;
 }
 
-.header {
-    background-color: #797979;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 3.5em;
+.meucontainer {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ffffff;
+  display: grid;
+  height: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1f 1fr 0.5fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "main main main main"
+    "c c c c"
+    "rodape rodape rodape rodape";
 }
 
-.header nav {
-    margin-left: 32rem;
+.menu {
+  grid-area: nav;
+  gap: 1rem;
+  background-color: #053a09
 }
 
-.header a {
-    text-decoration: none;
-    color: #f3f3f3ac;
+.menu-itens {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
 }
 
-.header a:hover {
-    color: #ffffff;
-    transition: 0.2s;
+.logo {
+  width: 100px;
 }
 
-h1 {
-    font-size: 36px;
+#principal {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #005c0c;
+  padding: 5rem;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  width: 100%;
+  height: 500px;
 }
 
-p {
-    font-size: 18px;
+#principal > img {
+  width: 800px;
 }
 
-section {
-    margin: 20px;
-    padding: 20px;
+#contents {
+  grid-area: c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Estilos para a seção de destaques */
-.destaque-item {
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-    max-width: 1080px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+.transferenciasps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  background-color: #053a09;
+  border-radius: 2rem;
 }
 
-#img-noticia {
-    width: 30%;
-    display: block;
+.title {
+  margin: 2rem;
+  font-size: 64px;
+  color: #1fb127;
 }
 
-#img-classificacao {
-    width: 50%;
-    display: block;
+.transferenciasp {
+  text-align: center;
+  padding: 2rem 1rem;
 }
 
-/* Estilos para a seção de inscrição */
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.transferenciasp img {
+  width: 250px;
+  margin: 1rem;
 }
 
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+.transferenciasp-name {
+  margin: 0.8rem;
+  font-weight: 300;
 }
 
-button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
+.transferenciasp-price {
+  font-size: 1.5rem;
+  padding-bottom: 0.2rem;
 }
 
-/* Estilos para o rodapé */
-.footer {
-    text-align: center;
-    background-color: #797979;
-    color: #fff;
-    padding: 10px;
+
+#rodape {
+  grid-area: rodape;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #011803 
 }
+
+.meu_input {
+    background-color: #101010 !important;
+    border: 1px solid #053a09 !important;
+    color: #053a09;
+}
+
+.meu_button {
+    background-color: #097712 !important;
+    border: none !important;
+}
+
+@media screen and (max-width: 992px) {
+    .transferenciasps {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+}
+
+@media screen and (max-width: 1080px) {
+    .transferenciasps {
+        grid-template-columns: 1fr 1fr;
+      }
+}
+@media screen and (max-width: 576px) {
+    .transferenciasps {
+      grid-template-columns: 1fr;
+    }
+    #rodape {
+      display: flex;
+      flex-direction: column;
+    }
+    .contatos h1 {
+        font-size: 64px;
+        margin-top: 3rem;
+        margin-bottom: 0;
+      }
+  }
